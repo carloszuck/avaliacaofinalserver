@@ -1,13 +1,11 @@
 const routes = require('express').Router();
+const UserController = require('./app/controllers/UserController');
 
-routes.get('/usuarios', (req, res) => {
-    res.json({msg : "usuarios!"});
-})
-
-routes.post('/usuarios', (req, res) => {
-    const nome = req.body.nome;
-    const idade = req.body.idade;
-    res.json({msg : `O nome é ${nome}/ A idade é ${idade}`});
-})
+routes.get('/users', UserController.index);
+routes.get('/users/:_id', UserController.show);
+routes.post('/users', UserController.create);
+routes.put('/users/:_id', UserController.update);
+routes.delete('/user/:_id', UserController.delete);
+module.eposrts = routes;
 
 module.exports = routes;
