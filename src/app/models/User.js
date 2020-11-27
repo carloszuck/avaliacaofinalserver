@@ -5,10 +5,10 @@ const UserSchema = new mongoose.Schema({
     lastname: { type: String, required: true},
     age: { type: Number, required: true},
     email: { type: String, required: true},
-    address: { type: String, required: flase},
-    createdAr: { type: Date, default: Date.now}
+    address: { type: String, required: false},
+    createdAt: { type: Date, default: Date.now}
 });
 
-const User = nongoose.model('User', UserSchema);
+const User = mongoose.model('User', UserSchema);
 
 module.exports = User;
